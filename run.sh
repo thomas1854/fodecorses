@@ -1,5 +1,5 @@
 # Stress/compare script: checks a second solution against a main (reference) solution.
-# Usage: ./run3.sh main.cpp sub.cpp <time_limit_seconds>
+# Usage: ./run.sh main.cpp sub.cpp <time_limit_seconds>
 #   $1 = reference solution (its output is treated as the correct answer)
 #   $2 = solution being tested
 #   $3 = time limit per test, in seconds (applied via `timeout`)
