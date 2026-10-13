@@ -240,3 +240,76 @@ footer {
     color: var(--color-highlight);
     border-top: 1px solid var(--color-border);
 }
+
+
+
+/*  Submission page Style */
+
+.submission-page {
+    color: var(--color-highlight);
+}
+
+
+.submission-section h1 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.submission-section{
+    padding: 40px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.submission-section h1{
+    margin-bottom: 20px;
+}
+
+.submission-table{
+    width: 100%;
+    border-collapse:collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+th,td{
+    padding: 12px , 16px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+th{
+    font-weight: bold;
+}
+
+.verdict-accepted,
+.verdict-tle,
+.verdict-wa,
+.verdict-ce,
+.verdict-mle,
+.verdict-rte{
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    display:inline-block;
+}
+
+.verdict-accepted{
+    color: rgb(1, 226, 1);
+}
+
+.verdict-wa{
+    color: red;
+}
+
+.verdict-tle,
+.verdict-ce,
+.verdict-mle,
+.verdict-rte{
+    color: yellow;
+}
