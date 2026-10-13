@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | fodecorses</title>
+    <link rel="stylesheet" href="../styles/login-signup.css" />
+  </head>
+  <body>
+    <div class="auth-card signup-card">
+      <div class="logo">&lt;/&gt;</div>
+      <h1 class="brand">fode<span>corses</span></h1>
+      <p class="tagline">Solve · Compete · Improve</p>
+
+      <div class="heading">
+        <h2>Create Your Account</h2>
+        <p>Join the community and start your journey</p>
+      </div>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="handle">Handle</label>
+          <input
+            type="text"
+            id="handle"
+            name="handle"
+            placeholder="Choose a unique handle"
+            autocomplete="username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Confirm your password"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <button type="submit" class="auth-button">
+          Sign Up <span>&rarr;</span>
+        </button>
+      </form>
+
+      <p class="switch-page">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+    </div>
+  </body>
+</html>
