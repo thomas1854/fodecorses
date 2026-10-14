@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Problem</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home-style.css">
+    <link rel="stylesheet" href="../styles/problem-pages-style.css">
 </head>
+
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="view_problem.html" class="logo">Code <span>LAB</span></a>
-        <div class="nav-links">
-            <a href="view_problem.html" class="active">Problems</a>
-            <a href="add_edit_problem.html">Manage Problem</a>
+        <div class="logo">
+            <div class="logo-bars">
+                <span class="bar-left"></span>
+                <span class="bar-middle"></span>
+                <span class="bar-right"></span>
+            </div>
+
+            <span class="logo-text"><span class="highlight-letter">F</span>ODECORSES</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="../pages/home.html"> Problemset </a></li>
+            <li><a href="../pages/submission.html">My Submissions</a></li>
+            <li><a href="#">Standings</a></li>
+            <li><a href="../pages/status.html">Status</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+            <button>Login</button>
+            <button>Register</button>
         </div>
 
     </nav>
@@ -34,13 +54,14 @@
             <h2>Problem Statement</h2>
             <div class="problem-statement">
                 <p>
-                    Given an array of integers nums and an integer target, 
+                    Given an array of integers nums and an integer target,
                     return indices of the three numbers such that they add up to target.
-                     You may assume that each input would have exactly one solution, and you may not use the same element twice.
-                      You can return the answer in any order.
+                    You may assume that each input would have exactly one solution, and you may not use the same element
+                    twice.
+                    You can return the answer in any order.
                 </p>
                 <h3>Input</h3>
-                    Return the indices of the three numbers that add up to the target.  
+                Return the indices of the three numbers that add up to the target.
                 </p>
                 <h3>Sample Input</h3>
                 <pre>
@@ -53,7 +74,8 @@
                 </pre>
                 <h3>Explanation</h3>
                 <p>
-                    The numbers at indices 0, 1, and 2 are -1, 0, and 1 respectively, which sum up to the target value of 0.
+                    The numbers at indices 0, 1, and 2 are -1, 0, and 1 respectively, which sum up to the target value
+                    of 0.
                 </p>
             </div>
         </section>
@@ -68,12 +90,13 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit Solution</button>
             </form>
-           
+
         </section>
 
     </main>
-   <footer class="footer">
-  CODELAB &copy; 2026 — Programming Contest Platform
-</footer>
+    <footer class="footer">
+        CODELAB &copy; 2026 — Programming Contest Platform
+    </footer>
 </body>
+
 </html>
