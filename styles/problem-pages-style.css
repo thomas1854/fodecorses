@@ -1,0 +1,261 @@
+
+
+:root {
+  --color-primary: #010736;
+  --color-secondary: #0D1C42;
+  --color-accent: #22396F;
+  --color-highlight: #FCF1D0;
+  --color-surface: #162750;
+  --color-blue-light: #36569A;
+  --color-text: #FFFFFF;
+  --color-text-muted: #C4CEE3;
+  --color-border: #22396F;
+  --color-cream-hover: #F4E5B8;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--color-primary);
+  color: var(--color-text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+
+.navbar {
+  background: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-highlight);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-highlight);
+}
+
+
+.container {
+  width: min(1000px, 90%);
+  margin: 45px auto;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: var(--color-text-muted);
+}
+
+
+.card {
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 26px;
+  margin-bottom: 24px;
+}
+
+.card:hover {
+  border-color: var(--color-blue-light);
+}
+
+.card h2 {
+  font-size: 19px;
+  margin-bottom: 22px;
+}
+
+.form_group {
+  margin-bottom: 20px;
+}
+
+.form_group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px 14px;
+  background: var(--color-primary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-blue-light);
+}
+
+input[type="file"] {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+input[type="file"]::file-selector-button {
+  background: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: 5px;
+  padding: 9px 12px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: var(--color-blue-light);
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+.note {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+
+.grid-2,
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-highlight);
+  color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-cream-hover);
+}
+
+.btn-secondary {
+  background: var(--color-accent);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-blue-light);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+
+.info-grid {
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.info-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.info-box p {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.info-box strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 22px;
+  color: var(--color-highlight);
+}
+
+
+.problem-statement {
+  color: var(--color-text-muted);
+  line-height: 1.9;
+}
+
+.problem-statement h3 {
+  color: var(--color-text);
+  margin: 18px 0 8px;
+}
+
+.problem-statement pre {
+  text-align: left;
+  direction: ltr;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--color-primary);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+.footer {
+  width: 100%;
+  min-height: 80px;
+  margin-top: 60px;
+  padding: 22px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-text-muted);
+}
