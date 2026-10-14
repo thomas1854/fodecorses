@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Stress/compare script: checks a second solution against a main (reference) solution.
 # Usage: ./run.sh main.cpp sub.cpp <time_limit_seconds>
 #   $1 = reference solution (its output is treated as the correct answer)
@@ -5,59 +6,43 @@
 #   $3 = time limit per test, in seconds (applied via `timeout`)
 # Expects: ./inputs/*.in as test inputs, and ./output-main and ./output-sub
 #          directories to already exist for the generated outputs.
+=======
+g++ -O2 -std=c++20 "$1" -o sub
+>>>>>>> 4b010f7 (feat: modified run script and added build script)
 
-# Compile both programs; if either compile fails, stop the script right away
-g++ $1 -o main || exit 1
-g++ $2 -o sub || exit 1
+status=$?
 
-# ---- Phase 1: generate the expected outputs using the reference solution ----
-# Run the main program on every input file and save its outputs
+if [ "$status" -ne 0 ]; then
+    echo "Compilation Error"
+    exit 1
+fi
+
 for file in ./inputs/*.in; do
-	# Skip if the file doesn't really exist (e.g. the glob matched nothing)
-	[ -f "$file" ] || continue
-	# Get just the file name (without the folder), e.g. 1.in
-	filename=$(basename "$file")
-	
-	# Feed the input to the program (limited by $3 seconds) and save the result as .out
-	timeout "$3"s  ./main < $file > "./output-main/${filename%.in}.out"
-	done
+    [ -f "$file" ] || continue
+    
+    filename=$(basename "$file")
 
-# ---- Phase 2: run the tested solution and compare against the reference ----
-# Do the same for the second program, but also judge each test as it finishes
-for file in ./inputs/*.in; do
-	[ -f "$file" ] || continue
-	filename=$(basename "$file")
+    main_out=$(tr -s '[:space:]' '\n' < "./output-main/${filename%.in}.out" | sed '/^$/d')
 
-	# Run the second program under the same time limit
-	timeout $3s ./sub < $file > "./output-sub/${filename%.in}.out"
-	
-	# Save the exit code right away (before any other command overwrites $?)
-	status=$?
+    sub_out=$(timeout "${2}s" ./sub < "$file")
 
-	# Path of the second program's output (the one we are going to check)
-	expected=./output-sub/${filename%.in}.out
+    status=$?
 
-	# Exit code 124 means `timeout` killed the program -> Time Limit Exceeded
-	if [ "$status" -eq 124 ]; then
-		echo "TLE on test ${filename%.in}"
-		exit 124
-	# Any other non-zero exit code means the program crashed -> Runtime Error
-	elif [ "$status" -ne 0 ]; then 
-		echo "RE on test ${filename%.in} "
-		exit 1
+    if [ "$status" -eq 124 ]; then
+        echo "TLE on test ${filename%.in}"
+        exit 124
 
-    # Compare the two outputs token by token, ignoring whitespace differences
-    # (tr turns every run of whitespace into a single newline so each word sits
-    #  on its own line, sed removes empty lines; diff output itself is discarded)
-    elif ! diff -w -B <(tr -s '[:space:]' '\n' < ./output-main/${filename%.in}.out | sed '/^$/d') \
-                    <(tr -s '[:space:]' '\n' < "$expected" | sed '/^$/d') > /dev/null; then
-    # Outputs differ -> Wrong Answer: print which test failed and stop
-    echo "WA on test ${filename%.in}"
+    elif [ "$status" -ne 0 ]; then
+        echo "RE on test ${filename%.in}"
         exit 1
-	fi
-	done
+    fi
 
+    sub_out=$(printf '%s' "$sub_out" | tr -s '[:space:]' '\n' | sed '/^$/d')
+    
+    if [ "$sub_out" != "$main_out" ]; then
+        echo "WA on test ${filename%.in}"
+        exit 1
+    fi
+done
 
-
-# Reaching here means every test passed (no TLE, RE, or WA)
 echo "AC"
