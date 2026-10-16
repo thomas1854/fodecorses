@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Problem</title>
+    <link rel="stylesheet" href="../styles/home-style.css">
+    <link rel="stylesheet" href="../styles/problem-pages-style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-bars">
+                <span class="bar-left"></span>
+                <span class="bar-middle"></span>
+                <span class="bar-right"></span>
+            </div>
+
+            <span class="logo-text"><span class="highlight-letter">F</span>ODECORSES</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="../pages/home.html"> Problemset </a></li>
+            <li><a href="../pages/submission.html">My Submissions</a></li>
+            <li><a href="../pages/Standings.html">Standings</a></li>
+            <li><a href="../pages/submission.html">Status</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+            <button>Login</button>
+            <button>Register</button>
+        </div>
+
+    </nav>
+    <main class="container">
+        <header class="page-header" style="text-align: center;">
+            <p>Problem ID: 12345</p>
+            <h1>Sum</h1>
+        </header>
+        <section class="info-grid">
+            <div class="info-box">
+                <p>Time Limit:</p>
+                <strong>256 ms</strong>
+            </div>
+            <div class="info-box">
+                <p>Memory Limit:</p>
+                <strong>256 MB</strong>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Problem Statement</h2>
+            <div class="problem-statement">
+                <p>
+                    Given an array of integers nums and an integer target,
+                    return indices of the three numbers such that they add up to target.
+                    You may assume that each input would have exactly one solution, and you may not use the same element
+                    twice.
+                    You can return the answer in any order.
+                </p>
+                <h3>Input</h3>
+                Return the indices of the three numbers that add up to the target.
+                </p>
+                <h3>Sample Input</h3>
+                <pre>
+                    6 0
+                    -1 0 1 2 -1 -4
+                </pre>
+                <h3>Sample Output</h3>
+                <pre>
+                    0 1 2
+                </pre>
+                <h3>Explanation</h3>
+                <p>
+                    The numbers at indices 0, 1, and 2 are -1, 0, and 1 respectively, which sum up to the target value
+                    of 0.
+                </p>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Submit Your Solution</h2>
+            <p calss="note">Upload your solution as C++ source file (.cpp).</p>
+            <form action="#" method="post">
+                <div class="form_group" style="margin-top: 20px;">
+                    <label for="solution">Solution File</label>
+                    <input type="file" id="solution" name="solution" accept=".cpp" required>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Solution</button>
+            </form>
+
+        </section>
+
+    </main>
+    <footer class="footer">
+        CODELAB &copy; 2026 — Programming Contest Platform
+    </footer>
+</body>
+
+</html>

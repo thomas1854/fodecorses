@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add / Edit Problem</title>
+    <link rel="stylesheet" href="../styles/home-style.css">
+    <link rel="stylesheet" href="../styles/problem-pages-style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-bars">
+                <span class="bar-left"></span>
+                <span class="bar-middle"></span>
+                <span class="bar-right"></span>
+            </div>
+
+            <span class="logo-text"><span class="highlight-letter">F</span>ODECORSES</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="../pages/home.html"> Problemset </a></li>
+            <li><a href="../pages/submission.html">My Submissions</a></li>
+            <li><a href="#">Standings</a></li>
+            <li><a href="../pages/status.html">Status</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+            <button>Login</button>
+            <button>Register</button>
+        </div>
+
+    </nav>
+    <main class="container">
+        <header class="page-header">
+            <h1>Add New Problem</h1>
+            <p>Create a new problem for the online judge.</p>
+        </header>
+        <form method="post">
+            <section class="card">
+                <h2>01. Problem Details</h2>
+                <div class="form_group">
+                    <label for="title">Problem Title</label>
+                    <input type="text" id="title" name="title" placeholder="Enter problem title" required>
+                </div>
+                <div class="form_group">
+                    <label for="statement">Problem Statement File</label>
+                    <input type="file" id="statement" name="statement" accept=".pdf,.docx,.txt" required>
+                    <p class="note">Upload the problem statement file (PDF, DOCX, or TXT)</p>
+                </div>
+                <div class="grid-2">
+                    <div class="form_group">
+                        <label for="time_limit">Time Limit (ms)</label>
+                        <input type="number" id="time" name="time_limit" placeholder="Enter time limit in milliseconds"
+                            min="1" value="256" required>
+                    </div>
+                    <div class="form_group">
+                        <label for="memory_limit">Memory Limit (MB)</label>
+                        <input type="number" id="memory" name="memory_limit"
+                            placeholder="Enter memory limit in megabytes" min="1" value="256" required>
+                    </div>
+            </section>
+            <section class="card">
+                <h2>02. Test Cases</h2>
+                <div class="form_group">
+                    <label for="test_cases">Test Cases File</label>
+                    <input type="file" id="tests" name="testfile[]" accept=".in" multiple required>
+                    <p class="note">Select one or more test case files (with .in extension)</p>
+                </div>
+            </section>
+            <section class="card">
+                <h2>Main Solution</h2>
+                <div class="form_group">
+                    <label for="solution">Reference Solution (.cpp)</label>
+                    <input type="file" id="solution" name="solution" accept=".cpp" required>
+                    <p class="note">Upload the main solution file (C++)</p>
+                </div>
+            </section>
+            <div class="action">
+                <button type="submit" class="btn btn-primary">Save Problem</button>
+                <button type="reset" class="btn btn-secondary">Reset Form</button>
+                <button onclick="window.location.href='./home.html' " class="btn btn-secondary">Cancel</button>
+
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+        CODELAB &copy; 2026 — Programming Contest Platform
+    </footer>
+</body>
+
+</html>

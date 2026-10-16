@@ -1,23 +1,10 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-# Stress/compare script: checks a second solution against a main (reference) solution.
-# Usage: ./run.sh main.cpp sub.cpp <time_limit_seconds>
-#   $1 = reference solution (its output is treated as the correct answer)
-#   $2 = solution being tested
-#   $3 = time limit per test, in seconds (applied via `timeout`)
-# Expects: ./inputs/*.in as test inputs, and ./output-main and ./output-sub
-#          directories to already exist for the generated outputs.
-=======
-=======
 # Run build.sh first (compiles the main/reference solution)
 bash build.sh ac.cpp $2
 
 # $1: sub-solution $2: time limit in seconds $3: memory limit in MB $4: scope id
 
 # Compile the submitted solution into an executable called "sub"
->>>>>>> Stashed changes
 g++ -O2 -std=c++20 "$1" -o sub
->>>>>>> 4b010f7 (feat: modified run script and added build script)
 
 # Save the exit code of the compiler (0 = success)
 status=$?

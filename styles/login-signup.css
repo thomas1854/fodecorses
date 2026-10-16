@@ -1,0 +1,206 @@
+
+/* ===== General ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0b1120;
+    --card: #111b2e;
+    --input: #0d1729;
+    --border: #334665;
+    --text: #f4f7ff;
+    --muted: #9aacc9;
+    --blue: #3478f6;
+    --purple: #6554f5;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+    background:
+        radial-gradient(
+            circle at top left,
+            #192b4c 0%,
+            transparent 40%
+        ),
+        var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Card ===== */
+.auth-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 42px;
+    background: linear-gradient(
+        145deg,
+        rgba(22, 34, 56, 0.98),
+        rgba(15, 24, 42, 0.98)
+    );
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.signup-card {
+    max-width: 540px;
+}
+
+/* ===== Logo ===== */
+.logo {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    color: #4b8cff;
+    margin-bottom: 8px;
+    letter-spacing: -3px;
+}
+
+.brand {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 750;
+}
+
+.brand span {
+    color: #6c72ff;
+}
+
+.tagline {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 8px;
+    margin-bottom: 38px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Heading ===== */
+.heading {
+    margin-bottom: 28px;
+}
+
+.heading h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ===== Form ===== */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 16px;
+    background: var(--input);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #8194b3;
+}
+
+.form-group input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(52, 120, 246, 0.15);
+}
+
+/* ===== Button ===== */
+.auth-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(
+        100deg,
+        var(--blue),
+        var(--purple)
+    );
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.auth-button span {
+    margin-left: 10px;
+    font-size: 21px;
+}
+
+.auth-button:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+/* ===== Switch Page ===== */
+.switch-page {
+    margin-top: 27px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.switch-page a {
+    color: #6c8cff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.switch-page a:hover {
+    color: #9daaff;
+    text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+
+    .brand {
+        font-size: 28px;
+    }
+
+    .heading h2 {
+        font-size: 23px;
+    }
+
+    .tagline {
+        margin-bottom: 30px;
+    }
+}

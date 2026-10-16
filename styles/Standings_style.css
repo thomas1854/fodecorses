@@ -1,0 +1,77 @@
+:root {
+  --bg-main: #010736;
+  --bg-card: #0D1C42;
+  --text-main: #FCF1D0;
+  --text-muted: #a79f88;
+  --header-bg: #22396F;
+  --header-text: #FCF1D0;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --hover-bg: #172d5e;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.Standings {
+  max-width: 900px;
+  margin:  auto;
+  background-color: var(--bg-card);
+  border-radius: 24px;
+  padding: 24px 24px 1px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-top: 30px;
+}
+
+.Standings h2 {
+  color: var(--text-main);
+  margin-bottom: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead th {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 14px;
+  font-size: 17px;
+}
+tbody td.username,
+tbody td:nth-child(2) {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: var(--hover-bg);
+  cursor: pointer;
+  transform: translateX(4px);
+}
